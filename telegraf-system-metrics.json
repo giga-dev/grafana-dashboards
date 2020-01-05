@@ -1,40 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_INFLUXDB",
-      "label": "InfluxDB",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.0.4"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "influxdb",
-      "name": "InfluxDB",
-      "version": "5.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -52,12 +16,13 @@
   "editable": true,
   "gnetId": 5955,
   "graphTooltip": 1,
-  "id": null,
-  "iteration": 1525621286878,
+  "id": 6,
+  "iteration": 1578242903076,
   "links": [],
   "panels": [
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -78,7 +43,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -110,6 +75,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -189,7 +155,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -221,6 +187,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -300,7 +267,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -332,6 +299,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -411,7 +379,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "format": "none",
       "gauge": {
@@ -444,6 +412,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -523,7 +492,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "format": "percent",
       "gauge": {
@@ -556,6 +525,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -635,7 +605,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "format": "percent",
       "gauge": {
@@ -668,6 +638,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -747,7 +718,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": 2,
       "format": "percent",
       "gauge": {
@@ -780,6 +751,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -859,7 +831,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": 0,
       "format": "none",
       "gauge": {
@@ -892,6 +864,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -971,7 +944,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": 0,
       "format": "none",
       "gauge": {
@@ -1004,6 +977,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1083,7 +1057,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "format": "percent",
       "gauge": {
@@ -1116,6 +1090,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1195,7 +1170,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "decimals": null,
       "format": "none",
       "gauge": {
@@ -1228,6 +1203,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1300,6 +1276,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1316,10 +1293,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 10,
@@ -1327,6 +1305,7 @@
         "x": 0,
         "y": 5
       },
+      "hiddenSeries": false,
       "id": 12054,
       "interval": "$inter",
       "legend": {
@@ -1346,6 +1325,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1408,6 +1390,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Memory usage",
       "tooltip": {
@@ -1438,17 +1421,22 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 10,
@@ -1456,6 +1444,7 @@
         "x": 0,
         "y": 15
       },
+      "hiddenSeries": false,
       "id": 65092,
       "interval": "$inter",
       "legend": {
@@ -1477,6 +1466,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1533,6 +1525,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU Usage",
       "tooltip": {
@@ -1563,17 +1556,22 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 7,
@@ -1581,6 +1579,7 @@
         "x": 0,
         "y": 25
       },
+      "hiddenSeries": false,
       "id": 54694,
       "interval": "$inter",
       "legend": {
@@ -1599,6 +1598,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1653,6 +1655,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU Load",
       "tooltip": {
@@ -1683,17 +1686,22 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 7,
@@ -1701,6 +1709,7 @@
         "x": 12,
         "y": 25
       },
+      "hiddenSeries": false,
       "id": 65089,
       "interval": "$inter",
       "legend": {
@@ -1722,6 +1731,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1785,6 +1797,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU usage per core",
       "tooltip": {
@@ -1815,14 +1828,18 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -1854,6 +1871,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1947,7 +1965,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -1979,6 +1997,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2069,6 +2088,7 @@
     },
     {
       "collapsed": true,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2085,7 +2105,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2114,6 +2134,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2221,7 +2242,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2250,6 +2271,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2357,7 +2379,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2386,6 +2408,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2498,7 +2521,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2527,6 +2550,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2634,7 +2658,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2663,6 +2687,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2759,7 +2784,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2788,6 +2813,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2884,7 +2910,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2915,6 +2941,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3069,7 +3096,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3100,6 +3127,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3254,7 +3282,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3285,6 +3313,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3436,6 +3465,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3452,7 +3482,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3480,6 +3510,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3635,7 +3666,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3663,6 +3694,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3819,7 +3851,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3849,6 +3881,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3950,7 +3983,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -3980,6 +4013,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4192,7 +4226,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -4220,6 +4254,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4371,7 +4406,7 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "editable": true,
       "error": false,
       "fill": 1,
@@ -4399,6 +4434,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4547,17 +4583,18 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 16,
+  "schemaVersion": 21,
   "style": "dark",
-  "tags": [
-    "influxdb",
-    "telegraf"
-  ],
+  "tags": [],
   "templating": {
     "list": [
       {
         "allFormat": "glob",
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "text": "InfluxDB",
+          "value": "InfluxDB"
+        },
+        "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": false,
         "label": "",
@@ -4567,12 +4604,17 @@
         "query": "influxdb",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "type": "datasource"
       },
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "text": "ip-172-31-14-131.us-east-2.compute.internal",
+          "value": "ip-172-31-14-131.us-east-2.compute.internal"
+        },
+        "datasource": "InfluxDB",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": "Server",
@@ -4582,6 +4624,7 @@
         "query": "SHOW TAG VALUES FROM system WITH KEY=host",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -4594,6 +4637,7 @@
         "auto_count": 100,
         "auto_min": "30s",
         "current": {
+          "selected": false,
           "text": "auto",
           "value": "$__auto_interval_inter"
         },
@@ -4697,12 +4741,18 @@
         ],
         "query": "1s,5s,10s,15s,30s,1m,10m,30m,1h,6h,12h,1d,7d,14d,30d,60d,90d",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       },
       {
         "allValue": null,
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "$datasource",
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": "CPU",
@@ -4712,6 +4762,7 @@
         "query": "SHOW TAG VALUES FROM \"cpu\" WITH KEY = \"cpu\" WHERE host =~ /$server/",
         "refresh": 1,
         "regex": "^cpu[0-9].*",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -4721,8 +4772,13 @@
       },
       {
         "allValue": null,
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "$datasource",
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": "disk",
@@ -4732,6 +4788,7 @@
         "query": "SHOW TAG VALUES FROM \"disk\" WITH KEY = \"device\"",
         "refresh": 1,
         "regex": "/[a-z]d[\\D]$/",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -4741,8 +4798,13 @@
       },
       {
         "allValue": null,
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "$datasource",
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": "interface",
@@ -4752,6 +4814,7 @@
         "query": "SHOW TAG VALUES FROM \"net\" WITH KEY = \"interface\" WHERE host =~ /$server/",
         "refresh": 1,
         "regex": "^(?!.*veth|all|tap).*",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -4792,5 +4855,6 @@
   },
   "timezone": "browser",
   "title": "Telegraf - system metrics",
+  "uid": "3Dcoz3YWz",
   "version": 2
 }
