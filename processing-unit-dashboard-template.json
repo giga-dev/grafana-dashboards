@@ -1,0 +1,733 @@
+{
+  "dashboard":{
+    "id": null,
+    "title": "ProcessingUnit-${PU-NAME}",
+    "originalTitle": "ProcessingUnit-${PU-NAME}",
+    "tags": [],
+    "style": "light",
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "sharedCrosshair": false,
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "250px",
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 11,
+            "leftYAxisLabel": "Used CPU (%)",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "fields": [
+                  {
+                    "func": "sum",
+                    "name": "value"
+                  }
+                ],
+                "groupByTags": [],
+                "query": "SELECT sum(value) FROM \"process_cpu_used-percent\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    },
+                    {
+                      "params": [
+                        " * 100"
+                      ],
+                      "type": "math"
+                    }
+                  ]
+                ],
+                "measurement": "process_cpu_used-percent"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU Usage",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "percent",
+              "percent"
+            ]
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 12,
+            "leftYAxisLabel": "Used Memory (bytes)",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"jvm_memory_heap_used-bytes\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "jvm_memory_heap_used-bytes"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "JVM Heap Usage",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "bytes",
+              "bytes"
+            ]
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 13,
+            "leftYAxisLabel": "Threads",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"jvm_threads_count\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "jvm_threads_count"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "JVM Threads",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "Summary"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "250px",
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 21,
+            "leftYAxisLabel": "Threads",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"lrmi_connection-pool_active-threads\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "lrmi_connection-pool_active-threads"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LRMI Default Connection Pool",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ]
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 22,
+            "leftYAxisLabel": "Threads",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"lrmi_liveness-pool_active-threads\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "lrmi_liveness-pool_active-threads"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LRMI Liveness Connection Pool",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ]
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 23,
+            "leftYAxisLabel": "Threads",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"lrmi_monitoring-pool_active-threads\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "lrmi_monitoring-pool_active-threads"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LRMI Monitoring Connection Pool",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ]
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 1,
+            "grid": {
+              "leftLogBase": 1,
+              "leftMax": null,
+              "leftMin": 0,
+              "rightLogBase": 1,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false
+            },
+            "id": 24,
+            "leftYAxisLabel": "Threads",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"lrmi_custom-pool_active-threads\" WHERE pu_name='${PU-NAME}' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "pu_name",
+                    "operator": "=",
+                    "value": "${PU-NAME}"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "lrmi_custom-pool_active-threads"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LRMI Custom Connection Pool",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ]
+          }
+        ],
+        "showTitle": true,
+        "title": "LRMI"
+      }
+    ],
+    "nav": [
+      {
+        "collapse": false,
+        "enable": true,
+        "notice": false,
+        "now": true,
+        "refresh_intervals": [
+          "5s",
+          "10s",
+          "30s",
+          "1m",
+          "5m",
+          "15m",
+          "30m",
+          "1h",
+          "2h",
+          "1d"
+        ],
+        "status": "Stable",
+        "time_options": [
+          "5m",
+          "15m",
+          "1h",
+          "6h",
+          "12h",
+          "24h",
+          "2d",
+          "7d",
+          "30d"
+        ],
+        "type": "timepicker"
+      }
+    ],
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "templating": {
+      "enable": false,
+      "list": []
+    },
+    "annotations": {
+      "enable": false,
+      "list": []
+    },
+    "refresh": "5s",
+    "schemaVersion": 6,
+    "version": 1,
+    "links": []
+  },
+  "overwrite": false
+}

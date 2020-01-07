@@ -1,0 +1,1054 @@
+{
+  "dashboard":{
+    "id": null,
+    "title": "Space-${SPACE-NAME}",
+    "originalTitle": "Space-${SPACE-NAME}",
+    "tags": [],
+    "style": "light",
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "sharedCrosshair": false,
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "200px",
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 11,
+            "leftYAxisLabel": "Entries",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_data_entries_total\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_data_entries_total"
+              }
+            ],
+            "title": "Entries",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 12,
+            "leftYAxisLabel": "Transactions",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_transactions_active\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_transactions_active"
+              }
+            ],
+            "title": "Active Transactions",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 13,
+            "leftYAxisLabel": "Connections",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_connections_incoming_active\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_connections_incoming_active"
+              }
+            ],
+            "title": "Active Incoming Connections",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 14,
+            "leftYAxisLabel": "Packets",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 3,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_replication_redo-log_size\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_replication_redo-log_size",
+                "rawQuery": true
+              }
+            ],
+            "title": "Replication Redo Log Size",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          }
+        ],
+        "showTitle": true,
+        "title": "Summary"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "200px",
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 21,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_write-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_write-tp"
+              }
+            ],
+            "title": "Write Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 22,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_read-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_read-tp"
+              }
+            ],
+            "title": "Read Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 23,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_take-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_take-tp"
+              }
+            ],
+            "title": "Take Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 24,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_change-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_change-tp"
+              }
+            ],
+            "title": "Change Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 25,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_execute-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_execute-tp"
+              }
+            ],
+            "title": "Execute Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "datasource": null,
+            "editable": true,
+            "error": false,
+            "fill": 0,
+            "grid": {
+              "leftMax": null,
+              "leftMin": 0,
+              "rightMax": null,
+              "rightMin": 0,
+              "threshold1": null,
+              "threshold1Color": "rgba(216, 200, 27, 0.27)",
+              "threshold2": null,
+              "threshold2Color": "rgba(234, 112, 112, 0.22)",
+              "thresholdLine": false,
+              "leftLogBase": 1,
+              "rightLogBase": 1
+            },
+            "id": 26,
+            "leftYAxisLabel": "Operations",
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "percentage": false,
+            "pointradius": 1,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "span": 4,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "query": "SELECT sum(value) FROM \"space_operations_before-listener-trigger-tp\" WHERE space_name='${SPACE-NAME}' AND space_active='true' AND $timeFilter GROUP BY time($interval)",
+                "tags": [
+                  {
+                    "key": "space_name",
+                    "operator": "=",
+                    "value": "${SPACE-NAME}"
+                  },
+                  {
+                    "key": "space_active",
+                    "operator": "=",
+                    "value": "true"
+                  }
+                ],
+                "groupByTags": [],
+                "fields": [
+                  {
+                    "name": "value",
+                    "func": "sum"
+                  }
+                ],
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "value"
+                      ],
+                      "type": "field"
+                    },
+                    {
+                      "params": [],
+                      "type": "sum"
+                    }
+                  ]
+                ],
+                "measurement": "space_operations_before-listener-trigger-tp"
+              }
+            ],
+            "title": "Notify Operations",
+            "tooltip": {
+              "shared": false,
+              "value_type": "cumulative"
+            },
+            "type": "graph",
+            "x-axis": true,
+            "y-axis": true,
+            "y_formats": [
+              "short",
+              "short"
+            ],
+            "timeFrom": null,
+            "timeShift": null
+          }
+        ],
+        "showTitle": true,
+        "title": "Space Operations"
+      }
+    ],
+    "nav": [
+      {
+        "collapse": false,
+        "enable": true,
+        "notice": false,
+        "now": true,
+        "refresh_intervals": [
+          "5s",
+          "10s",
+          "30s",
+          "1m",
+          "5m",
+          "15m",
+          "30m",
+          "1h",
+          "2h",
+          "1d"
+        ],
+        "status": "Stable",
+        "time_options": [
+          "5m",
+          "15m",
+          "1h",
+          "6h",
+          "12h",
+          "24h",
+          "2d",
+          "7d",
+          "30d"
+        ],
+        "type": "timepicker"
+      }
+    ],
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "templating": {
+      "enable": false,
+      "list": []
+    },
+    "annotations": {
+      "enable": false,
+      "list": []
+    },
+    "refresh": "5s",
+    "schemaVersion": 6,
+    "version": 0,
+    "links": []
+  },
+  "overwrite": false
+}
