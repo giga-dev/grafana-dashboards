@@ -4,7 +4,7 @@
         <reporter name="influxdb">
             <property name="host" value="influxdb.service.consul"/>
             <property name="port" value="8086"/>
-            <property name="database" value="gigaspaces"/>
+            <property name="database" value="telegraf"/>
         </reporter>
     </reporters>
 
